@@ -1,0 +1,47 @@
+@CHARSET "ISO-8859-1";
+
+#litraak-footer{
+	clear: both;
+	color: #93928A;
+	padding-top: 10px;
+	border-top: 1px solid #DEDCD1;
+	text-align: right;
+}
+
+#litraak-footer  .litraak-logo {
+	padding-left: 10px;
+}
+
+.ticket-change-title {
+	text-decoration: none;
+}
+.ticket-change-comment {
+	font-style: italic;
+	color: #555;
+	background-color: #F8F8F8;
+	padding: 2px 0 2px 20px;
+}
+
+/* Progress bar 
+------------------------------------------------------------------------------*/
+div.progress-bar {
+	position: relative;
+	border: 1px solid #CCC;
+	padding: 1px;
+	margin-top: 2px;
+}
+div.progress-bar .progress {
+	background-color: #BBFFBB;
+	height: 12px;
+	line-height: 12px;
+	clear: both;
+}
+div.progress-bar .progress-text {
+	position: absolute;
+	width: 100%;
+	margin-top: -1px;
+	text-align: center;
+	float: left;
+	color: #AAA;
+	font-size: 0.9em;
+}

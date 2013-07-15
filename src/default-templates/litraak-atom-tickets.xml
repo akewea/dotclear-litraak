@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xml:lang="{{tpl:BlogLanguage}}">
+  
+  <title type="html">{{tpl:BlogName encode_xml="1"}}{{tpl:SysFeedSubtitle encode_xml="1"}}
+  - {{tpl:lang Tickets}}</title>
+  <subtitle type="html">{{tpl:BlogDescription encode_xml="1"}}</subtitle>
+  <link href="{{tpl:SysSelfURI}}" rel="self" type="application/atom+xml"/>
+  <link href="{{tpl:LitraakURL}}" rel="alternate" type="text/html"
+  title="{{tpl:BlogDescription encode_xml="1"}}"/>
+  <updated>{{tpl:BlogUpdateDate iso8601="1"}}</updated>
+  <author>
+    <name>{{tpl:BlogEditor encode_xml="1"}}</name>
+  </author>
+  <id>{{tpl:BlogFeedID}}</id>
+  <generator uri="http://www.dotclear.net/">Dotclear</generator>
+  
+  <tpl:LitraakTickets sortby="date" order="desc">
+  
+  <entry>
+    <title>#{{tpl:LitraakTicketId}} - [{{tpl:LitraakTicketProjectName}}] {{tpl:LitraakTicketTitle encode_xml="1"}} ({{tpl:LitraakTicketStatus encode_xml="1"}})</title>
+    <link href="{{tpl:LitraakTicketURL encode_xml="1"}}" rel="alternate" type="text/html"
+    title="#{{tpl:LitraakTicketId}} - {{tpl:LitraakTicketTitle encode_xml="1"}} ({{tpl:LitraakTicketStatus encode_xml="1"}})" />
+    <id>{{tpl:LitraakTicketFeedID}}</id>
+    <updated>{{tpl:LitraakTicketDate iso8601="1"}}</updated>
+    <author><name>{{tpl:LitraakTicketAuthor encode_xml="1"}}</name></author>
+    <dc:subject>{{tpl:LitraakTicketProjectName encode_xml="1"}}</dc:subject>
+    <content type="html">{{tpl:LitraakTicketDescription absolute_urls="1" encode_xml="1"}}</content>
+  </entry>
+ 
+  </tpl:LitraakTickets>
+  
+</feed>

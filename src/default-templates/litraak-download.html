@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+  
+  <title>{{tpl:LitraakProjectName encode_html="1"}} - {{tpl:lang Download}} - {{tpl:BlogName encode_html="1"}}</title>
+  <meta name="description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  
+  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="dc.title" content="{{tpl:LitraakProjectName encode_html="1"}}" />
+  <meta name="dc.description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="dc.creator" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="dc.language" content="{{tpl:LitraakProjectLang}}" />
+  <meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="dc.date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  <meta name="dc.type" content="text" />
+  <meta name="dc.format" content="text/html" />
+  
+  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+  
+  	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All projects}})" href="{{tpl:LitraakFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's releases}})" href="{{tpl:LitraakReleasesFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's tickets}})" href="{{tpl:LitraakTicketsFeedURL type=" atom"}}" />
+
+  {{tpl:include src="_head.html"}}
+  
+</head>
+
+<body class="litraak-download">
+<div id="page">
+
+{{tpl:include src="_top.html"}}
+
+<div id="wrapper">
+
+<div id="main">
+  <div id="content">
+  
+	  <div id="p{{tpl:LitraakProjectID}}" class="post">
+	    <h2 class="post-title">{{tpl:LitraakProjectName encode_html="1"}}</h2>
+	    
+	    <p class="post-info">({{tpl:LitraakProjectStatus}}) {{tpl:lang last updated on}} 
+	    {{tpl:LitraakProjectDate}}, {{tpl:LitraakProjectTime}}</p>
+	    
+	    <tpl:Attachments>
+		<tpl:AttachmentsHeader>
+		<div class="attachments">
+			<ul>
+		</tpl:AttachmentsHeader>
+				<li class="{{tpl:AttachmentType}}">
+					<tpl:AttachmentIf is_mp3="1">
+					{{tpl:include src="_mp3_player.html"/}} - 
+					</tpl:AttachmentIf>
+					<tpl:AttachmentIf is_flv="1">
+					{{tpl:include src="_flv_player.html"/}}
+					</tpl:AttachmentIf>
+					<tpl:AttachmentIf is_flv="0">
+					<a href="{{tpl:AttachmentURL}}"
+					title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentFileName}}</a> - {{tpl:AttachmentTitle}}
+					</tpl:AttachmentIf>
+				</li>
+		<tpl:AttachmentsFooter>
+			</ul>
+		</div>
+		</tpl:AttachmentsFooter>
+		</tpl:Attachments>
+	    	  
+		<tpl:LitraakMilestones>
+		<tpl:LitraakMilestoneIf has_attachment="1">
+		<div>
+			
+			<h3><a href="{{tpl:LitraakMilestoneURL}}">{{tpl:LitraakMilestoneName}}</a></h3>
+			<p>{{tpl:LitraakMilestoneDate}}</p>
+			
+			<tpl:LitraakMilestoneAttachments>
+			<tpl:AttachmentsHeader>
+			<div class="attachments">
+				<ul>
+			</tpl:AttachmentsHeader>
+					<li class="{{tpl:AttachmentType}}">
+						<tpl:AttachmentIf is_mp3="1">
+						{{tpl:include src="_mp3_player.html"/}} - 
+						</tpl:AttachmentIf>
+						<tpl:AttachmentIf is_flv="1">
+						{{tpl:include src="_flv_player.html"/}}
+						</tpl:AttachmentIf>
+						<tpl:AttachmentIf is_flv="0">
+						<a href="{{tpl:AttachmentURL}}"
+						title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentFileName}}</a> - {{tpl:AttachmentTitle}}
+						</tpl:AttachmentIf>
+					</li>
+			<tpl:AttachmentsFooter>
+				</ul>
+			</div>
+			</tpl:AttachmentsFooter>
+			</tpl:LitraakMilestoneAttachments>
+			
+		</div>
+		<hr />
+		  
+		</tpl:LitraakMilestoneIf>
+		</tpl:LitraakMilestones>
+	  
+		{{tpl:include src="_litraak-nav.html"}}
+	    
+	    <p id="releases-feed"><a class="feed" href="{{tpl:LitraakReleasesFeedURL type="atom"}}"
+  		title="{{tpl:lang This project's releases Atom feed}}">{{tpl:lang This project's releases feed}}</a></p>
+
+	  </div>
+  
+  </div>
+</div> <!-- End #main -->
+
+<div id="sidebar">
+  <div id="blognav">
+    {{tpl:Widgets type="nav"}}
+  </div> <!-- End #blognav -->
+  
+  <div id="blogextra">
+    {{tpl:Widgets type="extra"}}
+  </div> <!-- End #blogextra -->
+</div>
+
+</div> <!-- End #wrapper -->
+
+{{tpl:include src="_footer.html"}}
+</div> <!-- End #page -->
+</body>
+</html>

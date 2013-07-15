@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+  
+  <title>{{tpl:LitraakProjectName encode_html="1"}} - {{tpl:lang Roadmap}} - {{tpl:BlogName encode_html="1"}}</title>
+  <meta name="description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  
+  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="dc.title" content="{{tpl:LitraakProjectName encode_html="1"}}" />
+  <meta name="dc.description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="dc.creator" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="dc.language" content="{{tpl:LitraakProjectLang}}" />
+  <meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="dc.date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  <meta name="dc.type" content="text" />
+  <meta name="dc.format" content="text/html" />
+  
+  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+  
+  	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All projects}})" href="{{tpl:LitraakFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's releases}})" href="{{tpl:LitraakReleasesFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's tickets}})" href="{{tpl:LitraakTicketsFeedURL type=" atom"}}" />
+
+  {{tpl:include src="_head.html"}}
+  
+</head>
+
+<body class="litraak-roadmap">
+<div id="page">
+
+{{tpl:include src="_top.html"}}
+
+<div id="wrapper">
+
+<div id="main">
+  <div id="content">
+  
+  <div id="p{{tpl:LitraakProjectID}}" class="post">
+    <h2 class="post-title">{{tpl:LitraakProjectName encode_html="1"}} {{tpl:lang Roadmap}}</h2>
+    
+    <tpl:LitraakMilestones>
+    <div>
+    	<h3><a href="{{tpl:LitraakMilestoneURL}}">{{tpl:LitraakMilestoneName}}</a></h3>
+    	<div>{{tpl:LitraakMilestoneDescription}}</div>
+    	<p>{{tpl:LitraakMilestoneDate}}</p>
+    	<p>{{tpl:LitraakMilestoneStatus}}</p>
+    	
+    	<div class="progress-info">
+    		<h4>{{tpl:lang Progress:}}</h4>
+    		{{tpl:LitraakMilestoneProgressBar}}
+    		<ul>
+    			<li>{{tpl:LitraakMilestoneTicketNumber type="actives" none="%d active" one="%d active" more="%d actives"}}</li>
+    			<li>{{tpl:LitraakMilestoneTicketNumber type="closed" none="%d closed" one="%d closed" more="%d closed"}}</li>
+    		</ul>
+    	</div>
+    </div>
+    
+    <hr />
+    
+    </tpl:LitraakMilestones>
+    
+    <tpl:LitraakTickets no_milestone="1" no_context="1">
+    <tpl:LitraakTicketsHeader>
+    	<h3><em>{{tpl:lang No milestone tickets}}</em></h3>
+    </tpl:LitraakTicketsHeader>
+    <ul>
+    	<li>
+    	<tpl:LitraakTicketIf status="closed"><del></tpl:LitraakTicketIf>
+    	<tpl:LitraakTicketIf status="rejected"><del></tpl:LitraakTicketIf>
+    	<a href="{{tpl:LitraakTicketURL}}" title="{{tpl:lang View ticket details}}">{{tpl:lang Ticket #}}{{tpl:LitraakTicketId}}</a>
+    	({{tpl:LitraakTicketType}}/{{tpl:LitraakTicketStatus}}) - 
+    	{{tpl:LitraakTicketTitle}} ({{tpl:LitraakTicketDate}})
+		<tpl:LitraakTicketIf status="closed"></del></tpl:LitraakTicketIf>
+		<tpl:LitraakTicketIf status="rejected"></del></tpl:LitraakTicketIf>
+		</li>
+    </ul>
+    </tpl:LitraakTickets>
+    
+    {{tpl:include src="_litraak-nav.html"}}
+    
+	<p id="tickets-feed"><a class="feed" href="{{tpl:LitraakTicketsFeedURL type="atom"}}"
+  	title="{{tpl:lang This project's tickets Atom feed}}">{{tpl:lang This project's tickets feed}}</a></p>
+    	    
+    <p id="releases-feed"><a class="feed" href="{{tpl:LitraakReleasesFeedURL type="atom"}}"
+	title="{{tpl:lang This project's releases Atom feed}}">{{tpl:lang This project's releases feed}}</a></p>
+
+  </div>
+ </div>
+</div> <!-- End #main -->
+
+<div id="sidebar">
+  <div id="blognav">
+    {{tpl:Widgets type="nav"}}
+  </div> <!-- End #blognav -->
+  
+  <div id="blogextra">
+    {{tpl:Widgets type="extra"}}
+  </div> <!-- End #blogextra -->
+</div>
+
+</div> <!-- End #wrapper -->
+
+{{tpl:include src="_footer.html"}}
+</div> <!-- End #page -->
+</body>
+</html>

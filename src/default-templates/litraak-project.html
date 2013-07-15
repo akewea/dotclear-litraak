@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+  
+  <title>{{tpl:LitraakProjectName encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+  <meta name="description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  
+  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="dc.title" content="{{tpl:LitraakProjectName encode_html="1"}}" />
+  <meta name="dc.description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="dc.creator" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="dc.language" content="{{tpl:LitraakProjectLang}}" />
+  <meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="dc.date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  <meta name="dc.type" content="text" />
+  <meta name="dc.format" content="text/html" />
+  
+  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+  
+  	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All projects}})" href="{{tpl:LitraakFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's releases}})" href="{{tpl:LitraakReleasesFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's tickets}})" href="{{tpl:LitraakTicketsFeedURL type=" atom"}}" />
+
+  {{tpl:include src="_head.html"}}
+  
+  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/../default/js/post.js"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+  var post_remember_str = '{{tpl:lang Remember me on this blog}}';
+  //]]>
+  </script>
+  
+</head>
+
+<body class="litraak-project">
+<div id="page">
+
+{{tpl:include src="_top.html"}}
+
+<div id="wrapper">
+
+<div id="main">
+  <div id="content">
+  
+  <div id="p{{tpl:LitraakProjectID}}" class="post">
+    <h2 class="post-title">{{tpl:LitraakProjectName encode_html="1"}}</h2>
+    
+    <p class="post-info">({{tpl:LitraakProjectStatus}}) {{tpl:lang last updated on}} {{tpl:LitraakProjectDate}}, {{tpl:LitraakProjectTime}}
+    - <a href="{{tpl:LitraakProjectURL}}">{{tpl:lang Permalink}}</a>
+    </p>
+    
+    <div class="post-content">{{tpl:LitraakProjectDescription}}</div>
+    
+    <tpl:LitraakProjectIfLastRelease>
+    <p>{{tpl:lang Last release}} : 
+    <a href="{{tpl:LitraakProjectLastReleaseURL}}">{{tpl:LitraakProjectLastReleaseName}}</a></p>
+    </tpl:LitraakProjectIfLastRelease>
+    
+    <tpl:LitraakProjectIfNextRelease>
+    <p>{{tpl:lang Next release}} : 
+    <a href="{{tpl:LitraakProjectNextReleaseURL}}">{{tpl:LitraakProjectNextReleaseName}}</a></p>
+    </tpl:LitraakProjectIfNextRelease>
+    
+    <p id="releases-feed"><a class="feed" href="{{tpl:LitraakReleasesFeedURL type="atom"}}"
+  	title="{{tpl:lang This project's releases Atom feed}}">{{tpl:lang This project's releases feed}}</a></p>
+
+	<p id="tickets-feed"><a class="feed" href="{{tpl:LitraakTicketsFeedURL type="atom"}}"
+  	title="{{tpl:lang This project's tickets Atom feed}}">{{tpl:lang This project's tickets feed}}</a></p>
+    	    
+    <!-- # Number of comments, trackbacks and attachments -->
+    <tpl:LitraakProjectIf has_attachment="1">
+    	<p class="post-info-co">
+      <a href="{{tpl:LitraakProjectURL}}download" class="attach_count">{{tpl:LitraakProjectAttachmentCount}}</a>
+      </p>
+    </tpl:LitraakProjectIf>
+    
+    {{tpl:include src="_litraak-nav.html"}}
+    
+  </div>
+  
+  <!-- # Comments -->
+  <tpl:LitraakProjectIf show_comments="1">
+    <tpl:LitraakComments>
+    <tpl:CommentsHeader>
+      <div id="comments">
+        <h3>{{tpl:lang Comments}}</h3>
+      <dl>
+    </tpl:CommentsHeader>
+      <dt id="c{{tpl:CommentID}}" class="{{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}"><a
+      href="#c{{tpl:CommentID}}" class="comment-number">{{tpl:CommentOrderNumber}}.</a>
+      {{tpl:lang On}} {{tpl:CommentDate}}, {{tpl:CommentTime}}
+      {{tpl:lang by}} {{tpl:CommentAuthorLink}}</dt>
+      
+      <dd class="{{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}">
+      <!-- # --BEHAVIOR-- publicCommentBeforeContent -->
+      {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+      
+      {{tpl:CommentContent}}
+      
+      <!-- # --BEHAVIOR-- publicCommentAfterContent -->
+      {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+      </dd>
+    <tpl:CommentsFooter>
+      </dl>
+      </div>
+    </tpl:CommentsFooter>
+    </tpl:LitraakComments>
+  </tpl:LitraakProjectIf>
+  
+  <tpl:LitraakProjectIf comments_active="1">    
+    <tpl:SysIfFormError>
+      <p class="error" id="pr">{{tpl:SysFormError}}</p>
+    </tpl:SysIfFormError>
+    
+    <tpl:SysIfCommentPublished>
+      <p class="message" id="pr">{{tpl:lang Your comment has been published.}}</p>
+    </tpl:SysIfCommentPublished>
+    
+    <tpl:SysIfCommentPending>
+      <p class="message" id="pr">{{tpl:lang Your comment has been submitted and
+      will be reviewed for publication.}}</p>
+    </tpl:SysIfCommentPending>
+    
+    <!-- # Comment form -->
+    <form action="{{tpl:LitraakProjectURL}}#pr" method="post" id="comment-form">
+      <tpl:IfCommentPreview>
+        <div id="pr">
+          <h3>{{tpl:lang Your comment}}</h3>
+          <dl>
+            <dd class="comment-preview">{{tpl:CommentPreviewContent}}</dd>
+          </dl>
+          <p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}" /></p>
+        </div>
+      </tpl:IfCommentPreview>
+      
+      <h3>{{tpl:lang Add a comment}}</h3>
+      <fieldset>
+        <!-- # --BEHAVIOR-- publicCommentFormBeforeContent -->
+        {{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
+        
+        <p class="field"><label for="c_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
+        <input name="c_name" id="c_name" type="text" size="30" maxlength="255"
+        value="{{tpl:CommentPreviewName encode_html="1"}}" />
+        </p>
+        
+        <p class="field"><label for="c_mail">{{tpl:lang Email address}}&nbsp;:</label>
+        <input name="c_mail" id="c_mail" type="text" size="30" maxlength="255"
+        value="{{tpl:CommentPreviewEmail encode_html="1"}}" />
+        </p>
+        
+        <p class="field"><label for="c_site">{{tpl:lang Website}}
+        ({{tpl:lang optional}})&nbsp;:</label>
+        <input name="c_site" id="c_site" type="text" size="30" maxlength="255"
+        value="{{tpl:CommentPreviewSite encode_html="1"}}" />
+        </p>
+        
+        <p style="display:none"><input name="f_mail" type="text" size="30"
+        maxlength="255" value="" /></p>
+        
+        <p class="field"><label for="c_content">{{tpl:lang Comment}}&nbsp;:</label>
+        <textarea name="c_content" id="c_content" cols="35"
+        rows="7">{{tpl:CommentPreviewContent raw="1" encode_html="1"}}</textarea>
+        </p>
+        <p class="form-help">{{tpl:lang HTML code is displayed as text and web addresses are
+        automatically converted.}}</p>
+        
+        <!-- # --BEHAVIOR-- publicCommentFormAfterContent -->
+        {{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
+      </fieldset>
+      
+      <fieldset>
+        <p class="buttons"><input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}" />
+        <tpl:IfCommentPreview><input type="submit" class="submit" value="{{tpl:lang send}}" /></tpl:IfCommentPreview></p>
+      </fieldset>
+    </form>
+  </tpl:LitraakProjectIf>
+  
+  <tpl:LitraakProjectIf comments_active="1">
+  <p id="comments-feed"><a class="feed" href="{{tpl:BlogFeedURL type="atom"}}/comments/{{tpl:LitraakProjectID}}"
+  title="{{tpl:lang This project's comments Atom feed}}">{{tpl:lang This project's comments feed}}</a></p>
+  </tpl:LitraakProjectIf>
+  
+  </div>
+</div> <!-- End #main -->
+
+<div id="sidebar">
+  <div id="blognav">
+    {{tpl:Widgets type="nav"}}
+  </div> <!-- End #blognav -->
+  
+  <div id="blogextra">
+    {{tpl:Widgets type="extra"}}
+  </div> <!-- End #blogextra -->
+</div>
+
+</div> <!-- End #wrapper -->
+
+{{tpl:include src="_footer.html"}}
+</div> <!-- End #page -->
+</body>
+</html>

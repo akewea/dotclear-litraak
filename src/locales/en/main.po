@@ -1,0 +1,11 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "%d closeds"
+msgstr "%d closed"
+
+msgid "closeds"
+msgstr "closed"
+
+msgid "wasteds"
+msgstr "wasted"

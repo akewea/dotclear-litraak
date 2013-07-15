@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:BlogLanguage}}" lang="{{tpl:BlogLanguage}}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+
+<title>{{tpl:BlogName encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
+<meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Litraak, light bug tracker for Dotclear}}" />
+<meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html=" 1"}}" />
+<meta name="author" content="{{tpl:BlogEditor encode_html=" 1"}}" />
+<meta name="date" scheme="W3CDTF" content="{{tpl:BlogUpdateDate iso8601=" 1"}}" />
+
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<meta name="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogName encode_html="1"}}
+
+<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf>
+" />
+<meta name="dc.description" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Litraak, light bug tracker for Dotclear}}" />
+<meta name="dc.language" content="{{tpl:BlogLanguage}}" />
+<meta name="dc.publisher" content="{{tpl:BlogEditor encode_html=" 1"}}" />
+<meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html=" 1"}}" />
+<meta name="dc.date" scheme="W3CDTF" content="{{tpl:BlogUpdateDate iso8601=" 1"}}" />
+<meta name="dc.type" content="text" />
+<meta name="dc.format" content="text/html" />
+
+<tpl:LitraakProjects no_content="1">
+	<link rel="chapter" href="{{tpl:LitraakProjectURL}}" title="{{tpl:LitraakProjectName encode_html=" 1"}}" />
+</tpl:LitraakProjects>
+
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All projects}})" href="{{tpl:LitraakFeedURL type=" atom"}}" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All releases}})" href="{{tpl:LitraakReleasesFeedURL type=" atom"}}" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All tickets}})" href="{{tpl:LitraakTicketsFeedURL type=" atom"}}" />
+
+{{tpl:include src="_head.html"}}
+
+</head>
+
+<body class="litraak-home">
+<div id="page">
+
+{{tpl:include src="_top.html"}}
+
+<div id="wrapper">
+
+<div id="main">
+<div id="content">
+
+	<tpl:LitraakProjects>
+	<div id="p{{tpl:LitraakProjectID}}" class="post {{tpl:LitraakProjectIfOdd}} {{tpl:LitraakProjectIfFirst}}" lang="{{tpl:LitraakProjectLang}}" xml:lang="{{tpl:LitraakProjectLang}}">
+	
+	<h2 class="post-title"><a href="{{tpl:LitraakProjectURL}}">{{tpl:LitraakProjectName encode_html="1"}}</a></h2>
+
+	<p class="post-info">({{tpl:LitraakProjectStatus}}) {{tpl:lang last updated on}} {{tpl:LitraakProjectDate}}, {{tpl:LitraakProjectTime}}</p>
+	
+	<!-- # Project with an description --> 
+	<tpl:LitraakProjectIf extended="1">
+		<div class="post-content">{{tpl:LitraakProjectDescription}}</div>
+	</tpl:LitraakProjectIf> 
+	
+	<!-- # Number of comments, trackbacks and attachments --> 
+	<tpl:LitraakProjectIf show_comments="1">
+		<p class="post-info-co">
+		<a href="{{tpl:LitraakProjectURL}}#comments" class="comment_count">{{tpl:LitraakProjectCommentCount}}</a>
+		</p>
+	</tpl:LitraakProjectIf>
+	</div>
+	
+	{{tpl:include src="_litraak-nav.html"}}
+	
+</tpl:LitraakProjects>
+</div>
+</div>
+<!-- End #main -->
+
+<div id="sidebar">
+<div id="blognav">{{tpl:Widgets type="nav"}}</div>
+<!-- End #blognav -->
+
+<div id="blogextra">{{tpl:Widgets type="extra"}}</div>
+<!-- End #blogextra --></div>
+
+</div>
+<!-- End #wrapper --> {{tpl:include src="_footer.html"}}</div>
+<!-- End #page -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div id="litraak-nav">
+	<ul>
+		<li class="first"><a href="{{tpl:LitraakProjectURL}}" class="home_link" 
+		title="{{tpl:LitraakProjectName}} - {{tpl:lang Home}}">{{tpl:lang Project's home}}</a></li>
+		<li><a href="{{tpl:LitraakProjectURL}}doc" class="doc_link" 
+		title="{{tpl:LitraakProjectName}} - {{tpl:lang Documentation}}">{{tpl:lang Documentation}}</a></li>
+		<li><a href="{{tpl:LitraakProjectURL}}download" class="download_link" 
+		title="{{tpl:LitraakProjectName}} - {{tpl:lang Downloads}}">{{tpl:lang Download}}</a></li>
+		<li<tpl:LitraakProjectIf tickets_active="0"> class="last"</tpl:LitraakProjectIf>><a href="{{tpl:LitraakProjectURL}}roadmap" class="roadmap_link" 
+		title="{{tpl:LitraakProjectName}} - {{tpl:lang Roadmap}}">{{tpl:lang Roadmap}}</a></li>
+		<tpl:LitraakProjectIf tickets_active="1">
+		<li class="last"><a href="{{tpl:LitraakProjectURL}}ticket/" class="support_link" 
+		title="{{tpl:lang Report a bug or submit an idea on}} {{tpl:LitraakProjectName}}">{{tpl:lang Report a bug}}</a></li>
+		</tpl:LitraakProjectIf>
+	 </ul>
+</div>

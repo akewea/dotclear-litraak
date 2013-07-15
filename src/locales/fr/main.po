@@ -1,0 +1,473 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Enable LitraAk"
+msgstr "Activer LitraAk"
+
+msgid "Status:"
+msgstr "Etat :"
+
+msgid "Type:"
+msgstr "Type :"
+
+msgid "Submitted by:"
+msgstr "Soumis par :"
+
+msgid "Last updated on:"
+msgstr "Dernière mise à jour :"
+
+msgid "abandoned"
+msgstr "abandonné"
+
+msgid "release candidate"
+msgstr "release candidate"
+
+msgid "unknown"
+msgstr "non défini"
+
+msgid "released"
+msgstr "publié"
+
+msgid "unreleased"
+msgstr "à venir"
+
+msgid "new"
+msgstr "nouveau"
+
+msgid "accepted"
+msgstr "accepté"
+
+msgid "closed"
+msgstr "fermé"
+
+msgid "rejected"
+msgstr "rejeté"
+
+msgid "deleted"
+msgstr "supprimé"
+
+msgid "wasted"
+msgstr "déchet"
+
+msgid "actives"
+msgstr "actifs"
+
+msgid "active"
+msgstr "actif"
+
+msgid "bug"
+msgstr "bug"
+
+msgid "task"
+msgstr "tâche"
+
+msgid "idea"
+msgstr "idée"
+
+msgid "private"
+msgstr "privé"
+
+msgid "public"
+msgstr "public"
+
+msgid "Ticket history"
+msgstr "Historique du ticket"
+
+msgid "at"
+msgstr "à"
+
+msgid "More"
+msgstr "Plus"
+
+msgid "Report a bug"
+msgstr "Rapporter un bug"
+
+msgid "Report a bug or submit an idea on"
+msgstr "Rapporter un bug ou soumettre une idée pour"
+
+msgid "<strong>Type</strong> changed from <em>%s</em> to <em>%s</em>"
+msgstr "Le <strong>type</strong> est passé de <em>%s</em> à <em>%s</em>"
+
+msgid "<strong>Status</strong> changed from <em>%s</em> to <em>%s</em>"
+msgstr "Le <strong>statut</strong> est passé de <em>%s</em> à <em>%s</em>"
+
+msgid "<strong>Milestone</strong> changed from <em>%s</em> to <em>%s</em>"
+msgstr "La <strong>version</strong> est passée de <em>%s</em> à <em>%s</em>"
+
+msgid "<strong>Milestone</strong> unset from <em>%s</em>"
+msgstr "La <strong>version</strong> a été désaffectéé de <em>%s</em>"
+
+msgid "<strong>Milestone</strong> set to <em>%s</em>"
+msgstr "La <strong>version</strong> a été affectée à <em>%s</em>"
+
+msgid "<strong>Description</strong> changed"
+msgstr "La <strong>description</strong> a changé"
+
+msgid "<strong>Comment</strong> added by <em>%s</em>"
+msgstr "Un <strong>commentaire</strong> a été ajouté par <em>%s</em>"
+
+msgid "Download"
+msgstr "Télécharger"
+
+msgid "download"
+msgstr "telecharger"
+
+msgid "Downloads"
+msgstr "Téléchargements"
+
+msgid "downloads"
+msgstr "téléchargements"
+
+msgid "Roadmap"
+msgstr "Feuille de route"
+
+msgid "roadmap"
+msgstr "feuille de route"
+
+msgid "This project's comments feed"
+msgstr "Le fil des commentaire de ce projet"
+
+msgid "Project's home"
+msgstr "Accueil du projet"
+
+msgid "View project"
+msgstr "Voir le projet"
+
+msgid "View this project"
+msgstr "Voir ce projet"
+
+msgid "last update on"
+msgstr "dernière mise à jour le"
+
+msgid "Last release"
+msgstr "Version actuelle"
+
+msgid "Next release"
+msgstr "Prochaine version"
+
+msgid "Ticket has been successfully updated."
+msgstr "Le ticket a été mis à jour avec succès."
+
+msgid "Add an update comment:"
+msgstr "Ajouter un commentaire sur la mise à jour :"
+
+msgid "Show this comment on public pages"
+msgstr "Afficher ce commentaire sur les pages publiques"
+
+msgid "Ticket changes"
+msgstr "Historique du ticket"
+
+msgid "Edit project"
+msgstr "Editer le projet"
+
+msgid "About"
+msgstr "A propos"
+
+msgid "Edit this milestone"
+msgstr "Editer cette version"
+
+msgid "Project status"
+msgstr "Etat du projet"
+
+msgid "Project lang"
+msgstr "Langue du projet"
+
+msgid "Add files to this project"
+msgstr "Ajouter des fichiers à ce projet"
+
+msgid "Add files to this milestone"
+msgstr "Ajouter des fichiers à cette version"
+
+msgid "Milestone"
+msgstr "Version"
+
+msgid "Milestones"
+msgstr "Versions"
+
+msgid "Milestone:"
+msgstr "Version :"
+
+msgid "Due on:"
+msgstr "Prévue pour le :"
+
+msgid "Due on"
+msgstr "Prévue pour le"
+
+msgid "Released on:"
+msgstr "Publiée le :"
+
+msgid "Released on"
+msgstr "Publiée le"
+
+msgid "Progress:"
+msgstr "Avancement :"
+
+msgid "%d active"
+msgstr "%d actif"
+
+msgid "%d actives"
+msgstr "%d actifs"
+
+msgid "%d closed"
+msgstr "%d fermé"
+
+msgid "%d closeds"
+msgstr "%d fermés"
+
+msgid "wasteds"
+msgstr "déchets"
+
+msgid "closeds"
+msgstr "fermés"
+
+msgid "View those tickets"
+msgstr "Afficher ces tickets"
+
+msgid "View milestone details"
+msgstr "Voir le détail de la version"
+
+msgid "View milestone"
+msgstr "Voir la version"
+
+msgid "View ticket details"
+msgstr "Afficher le détail du ticket"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "View ticket"
+msgstr "Voir le ticket"
+
+msgid "No change for this ticket."
+msgstr "Aucun changement sur ce ticket."
+
+msgid "Project lang:"
+msgstr "Langue du projet :"
+
+msgid "Project documentation has been successfully updated."
+msgstr "La documentation du projet a été mise à jour avec succès."
+
+msgid "Project has been successfully updated."
+msgstr "Le projet a été mise à jour avec succès."
+
+msgid "New project"
+msgstr "Nouveau projet"
+
+msgid "Project has been successfully created."
+msgstr "Le projet a été créé avec succès."
+
+msgid "New milestone"
+msgstr "Nouvelle version"
+
+msgid "New ticket"
+msgstr "Nouveau ticket"
+
+msgid "No milestone"
+msgstr "Aucune version"
+
+msgid "No ticket"
+msgstr "Aucun ticket"
+
+msgid "%s open tickets"
+msgstr "%s tickets ouverts"
+
+msgid "All tickets"
+msgstr "Tous les tickets"
+
+msgid "Projects"
+msgstr "Projets"
+
+msgid "Project"
+msgstr "Projet"
+
+msgid "Project status:"
+msgstr "Etat du projet :"
+
+msgid "Project phase:"
+msgstr "Phase du projet :"
+
+msgid "View documentation"
+msgstr "Voir la documentation"
+
+msgid "Project description edit field height:"
+msgstr "Taille de la zone d'édition de la description d'un projet :"
+
+msgid "Project documentation edit field height:"
+msgstr "Taille de la zone d'édition de la documentation :"
+
+msgid "Add LitraAk to dashboard"
+msgstr "Ajouter LiTraAk sur le tableau de bord"
+
+msgid "Add LitraAk to blog menu (instead of plugins menu)"
+msgstr "Ajouter LiTraAk au menu du blog (à la placve du menu des plugins)"
+
+msgid "No project name"
+msgstr "Pas de nom de projet"
+
+msgid "No project description"
+msgstr "Pas de description du projet"
+
+msgid "No milestone tickets"
+msgstr "Tickets non affectés"
+
+msgid "Tickets per page"
+msgstr "Tickets par page"
+
+msgid "Projects per page"
+msgstr "Projets par page"
+
+msgid "Milestones per page"
+msgstr "Versions par page"
+
+msgid "Empty milestone URL"
+msgstr "URL de la version est vide"
+
+msgid "Empty milestone description"
+msgstr "La description de la version est vide"
+
+msgid "Empty milestone name"
+msgstr "Le nom de la version est vide"
+
+msgid "Empty milestone date"
+msgstr "La date de la version est vide"
+
+msgid "Warning: If you set the URL manually, it may conflict with another milestone."
+msgstr "Attention : si vous indiquez l'URL manuellement, celle-ci peut entrer en conflit avec une autre version."
+
+msgid "Warning: If you set the URL manually, it may conflict with another project."
+msgstr "Attention : si vous indiquez l'URL manuellement, celle-ci peut entrer en conflit avec un autre projet."
+
+msgid "Milestone has been successfully created."
+msgstr "La version a été créée avec succès."
+
+msgid "Milestone has been successfully updated."
+msgstr "La version a été mise à jour avec succès."
+
+msgid "This project does not exist."
+msgstr "Ce projet n'existe pas."
+
+msgid "URL is invalid"
+msgstr "L'URL n'est pas valide."
+
+msgid "Empty ticket description."
+msgstr "La description du ticket est vide."
+
+msgid "Empty ticket title."
+msgstr "Le titre du ticket est vide."
+
+msgid "Empty ticket author name."
+msgstr "Le nom de l'auteur du ticket est vide."
+
+msgid "Email address is not valid."
+msgstr "L'adresse email n'est pas valide."
+
+msgid "Ticket has been successfully created."
+msgstr "Le ticket a été créé avec succès."
+
+msgid "Phase"
+msgstr "Phase"
+
+msgid "Phase:"
+msgstr "Phase :"
+
+msgid "Releases"
+msgstr "Versions publiées"
+
+msgid "All projects"
+msgstr "Tous les projets"
+
+msgid "All releases"
+msgstr "Toutes les versions publiées"
+
+msgid "This project's releases"
+msgstr "Les versions publiées de ce projet"
+
+msgid "This project's tickets"
+msgstr "Les tickets de ce projets"
+
+msgid "This project's releases Atom feed"
+msgstr "Le fil Atom des versions publiées de ce projet"
+
+msgid "This project's releases feed"
+msgstr "Le fil des versions publiées de ce projet"
+
+msgid "This project's tickets Atom feed"
+msgstr "Le fil Atom des tickets de ce projet"
+
+msgid "This project's tickets feed"
+msgstr "Le fil des tickets de ce projet"
+
+msgid "LitraAk project list"
+msgstr "Liste des projets LitraAk"
+
+msgid "Add a comment"
+msgstr "Ajouter un commentaire"
+
+msgid "Accept tickets"
+msgstr "Accepter les tickets"
+
+msgid "Feeds"
+msgstr "Syndication"
+
+msgid "Empty basename URL."
+msgstr "Nom de base de l'URL est vide."
+
+msgid "Feed size must be of 1 at least."
+msgstr "La taille d'un flux doit être de 1 au minimum."
+
+msgid "Configuration has been successfully updated."
+msgstr "Configuration mise à jour avec succès."
+
+msgid "Basename URL"
+msgstr "Nom de base de l'URL"
+
+msgid "Include default CSS"
+msgstr "Inclure la CSS par défaut"
+
+msgid "Projects per feed"
+msgstr "Projets par flux de syndication"
+
+msgid "Milestones per feed"
+msgstr "Versions par flux de syndication"
+
+msgid "Tickets per feed"
+msgstr "Tickets par flux de syndication"
+
+msgid "on"
+msgstr "sur"
+
+msgid "This project tickets"
+msgstr "Les tickets de ce projet"
+
+msgid "This project active tickets"
+msgstr "Les tickets actifs de ce projet"
+
+msgid "This milestone tickets"
+msgstr "Les tickets de cette version"
+
+msgid "This milestone active tickets"
+msgstr "Les tickets actifs de cette version"
+
+msgid "This project comments"
+msgstr "Les commentaires de ce projet"
+
+msgid "Selected projects action:"
+msgstr "Action sur les projets sélectionnés :"
+
+msgid "Selected tickets action:"
+msgstr "Action sur les tickets sélectionnés :"
+
+msgid "This milestone details"
+msgstr "Détails de cette version"
+
+msgid "This milestone other tickets"
+msgstr "Autres tickets de cette version"
+
+msgid "xxx"
+msgstr "xxx"
+
+msgid "xxx"
+msgstr "xxx"
+
+msgid "xxx"
+msgstr "xxx"

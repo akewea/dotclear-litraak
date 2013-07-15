@@ -1,0 +1,185 @@
+﻿<html>
+<head>
+<title>Projet</title>
+</head>
+<body>
+
+<h3>Edition du projet</h3>
+
+<dl>
+	<dt>Nom du projet</dt>
+	<dd>Inscrivez le nom du projet. Ce champ est obligatoire.</dd>
+
+	<dt>Description</dt>
+	<dd>La description du projet. Ce champ est obligatoire. La hauteur
+	de la zone d'édition se paramètre dans vos préférences utilisateur.</dd>
+
+	<dt>Notes</dt>
+	<dd>Cette zone de texte sert à la prise de notes ou pense-bête
+	divers. Elle ne sera jamais affichée sur le blog.</dd>
+
+	<dt>Catégorie</dt>
+	<dd>La catégorie de votre billet. Pour créer une nouvelle
+	catégorie, rendez vous dans la section "catégories". Vous pouvez
+	n'affecter votre billet à aucune catégorie en choisissant la ligne
+	vide.</dd>
+
+	<dt>État du projet</dt>
+	<dd>Permet de choisir l'état du projet après enregistrement&nbsp;:
+	<ul>
+		<li><strong>abandonné</strong>&nbsp;: le projet n'est plus
+		maintenu.</li>
+		<li><strong>en attente</strong>&nbsp;: le projet est en attente
+		de publication (non visible sur la partie publique).</li>
+		<li><strong>alpha</strong>&nbsp;: le projet est en version alpha.</li>
+		<li><strong>beta</strong>&nbsp;: le projet est en version beta.</li>
+		<li><strong>release candidate</strong>&nbsp;: le projet est en
+		version candidate à la publication.</li>
+		<li><strong>publié</strong>&nbsp;: le projet est publié (version
+		finale).</li>
+	</ul>
+	</dd>
+
+	<dt>Format du texte</dt>
+	<dd>Permet de choisir la syntaxe de saisie de la description du
+	projet. Le wiki est une syntaxe simplifiée et sera converti en xhtml
+	valide ; à moins que vous maîtrisiez parfaitement le HTML nous vous
+	conseillons de la choisir de préférence. Consultez la référence de la
+	syntaxe Wiki pour plus d'informations. ATTENTION ! Ce champ sert
+	également au format de la documentation.</dd>
+
+	<dt>Accepter les commentaires</dt>
+	<dd>Cochez ou décochez la case selon que vous souhaitez permettre
+	ou interdire les commentaires sur le projet en particulier. L'option
+	pour permettre ou autoriser de façon générale les commentaires se situe
+	dans le menu Préférences du blog.</dd>
+
+	<dt>URL spécifique</dt>
+	<dd>Ce champ permet de choisir une URL pour un projet autre que
+	celle par défaut après avoir cliqué sur le petit verrou placé à sa
+	droite. Si vous essayez d'utiliser une URL déjà existante, celle-ci se
+	verra incrémentée d'un chiffre.</dd>
+
+	<dt>Langue du projet</dt>
+	<dd>Code langue de votre projet. Par défaut, il s'agit du code de
+	votre langue.</dd>
+
+	<dt>Pièces jointes</dt>
+	<dd>Les pièces jointes sont tous les media attachés directement au
+	projet. Le lien d'ajout d'une pièce jointe permet de choisir un fichier
+	à ajouter au billet. Vous pouvez également attacher des médias à vos
+	versions..</dd>
+
+</dl>
+
+<h3>Documentation du projet</h3>
+
+<dl>
+	<dt>Documentation</dt>
+	<dd>La documentation du projet. La hauteur de la zone d'édition se
+	paramètre dans vos préférences utilisateur.</dd>
+
+	<dt>Format du texte</dt>
+	<dd>Permet de choisir la syntaxe de saisie de la documentation du
+	projet. Le wiki est une syntaxe simplifiée et sera converti en xhtml
+	valide ; à moins que vous maîtrisiez parfaitement le HTML nous vous
+	conseillons de la choisir de préférence. Consultez la référence de la
+	syntaxe Wiki pour plus d'informations. ATTENTION ! Ce champ sert
+	également au format de la description du projet.</dd>
+</dl>
+
+<h3>Les autres onglets</h3>
+<dl>
+	<dt>Versions</dt>
+	<dd>Cet onglet donne accès aux versions du projet. Il permet de
+	les éditer et d'en créer de nouvelles.</dd>
+
+	<dt>Tickets</dt>
+	<dd>Cet onglet donne accès aux tickets du projet. Il permet de les
+	éditer et d'en créer de nouveaux.</dd>
+
+	<dt>Commentaires</dt>
+	<dd>Cet onglet donne accès aux commentaires du projet.</dd>
+</dl>
+
+<h3>Référence de la syntaxe Wiki</h3>
+
+<p>La syntaxe Wiki est une manière d'écrire du texte avec un jeu de
+balises réduit au minimum, permettant de couvrir les besoins les plus
+courants (titres, paragraphes, citations, listes...).</p>
+
+<dl>
+	<dt>Éléments de bloc</dt>
+	<dd>
+	<ul>
+		<li>Laissez une ligne vide entre chaque bloc de même nature.</li>
+		<li><strong>Paragraphe</strong>&nbsp;: texte libre, terminé par
+		une ligne vide si suivi d'un second paragraphe.</li>
+		<li><strong>Titre</strong>&nbsp;: <code>!!! titre</code>, <code>!!
+		titre</code> ou <code>! titre</code> pour des titres plus ou moins
+		importants.</li>
+		<li><strong>Trait horizontal</strong>&nbsp;: <code>----</code></li>
+		<li><strong>Listes</strong>&nbsp;: lignes débutant par <code>*</code>
+		pour des listes à puce ou <code>#</code> pour des listes numérotées.
+		Vous pouvez faire des listes imbriquées en mélangeant les codes de
+		liste. Par exemple&nbsp;: <pre>
+* item 1
+** item 1.1
+* item 2
+*# item 2.1
+...
+</pre></li>
+		<li><strong>Texte préformaté</strong>&nbsp;: espace avant chaque
+		ligne de texte.</li>
+		<li><strong>Bloc de citation</strong>&nbsp;: <code>&gt;</code>
+		devant chaque ligne de texte.</li>
+	</ul>
+	</dd>
+
+	<dt>Éléments de formatage</dt>
+	<dd>
+	<ul>
+		<li><strong>Emphase</strong>&nbsp;: deux apostrophes <code>''texte''</code></li>
+		<li><strong>Forte emphase</strong>&nbsp;: deux soulignés <code>__texte__</code></li>
+		<li><strong>Retour forcé à la ligne</strong>&nbsp;: <code>%%%</code></li>
+
+		<li><strong>Insertion</strong>&nbsp;: deux plus <code>++texte++</code></li>
+		<li><strong>Suppression</strong>&nbsp;: deux moins <code>--texte--</code></li>
+		<li><strong>Lien</strong>&nbsp;: <code>[url]</code>, <code>[nom|url]</code>,
+		<code>[nom|url|langue]</code> ou <code>[nom|url|langue|titre]</code></li>
+
+		<li><strong>Image</strong>&nbsp;: <code>((url|texte
+		alternatif))</code>, <code>((url|texte alternatif|position))</code> ou <code>((url|texte
+		alternatif|position|description longue))</code>. <br />
+		La position peut prendre les valeurs L ou G (gauche), R ou D (droite)
+		ou C (centré).</li>
+		<li><strong>Ancre</strong>&nbsp;: <code>~ancre~</code></li>
+
+		<li><strong>Acronyme</strong>&nbsp;: <code>??acronyme|titre??</code></li>
+		<li><strong>Citation en ligne</strong>&nbsp;: <code>{{citation}}</code>,
+		<code>{{citation|langue}}</code> ou <code>{{citation|langue|url}}</code></li>
+		<li><strong>Code</strong>&nbsp;: <code>@@code ici@@</code></li>
+
+		<li><strong>Note de bas de page</strong>&nbsp;: <code>$$Corps
+		de la note$$</code></li>
+	</ul>
+	</dd>
+
+	<dt>Empêcher le formatage du texte</dt>
+	<dd>Pour insérer un caractère sans que celui-ci soit reconnu comme
+	un caractère de formatage, ajoutez le caractère <code>\</code> avant
+	celui-ci. Par exemple&nbsp;: <code>\[texte entre crochet qui
+	n'est pas un lien\]</code></dd>
+
+	<dt>Insérer du code HTML</dt>
+	<dd>Vous pouvez ponctuellement avoir besoin d'insérer du code HTML
+	dans votre texte au format Wiki. Pour cela, utilisez le code
+	suivant&nbsp;: <pre>
+///html
+&lt;p style="color:red"&gt;mon texte en rouge&lt;/p&gt;
+///
+</pre></dd>
+</dl>
+
+</body>
+</html>

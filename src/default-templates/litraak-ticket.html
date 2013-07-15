@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{tpl:EntryLang}}" lang="{{tpl:EntryLang}}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+  
+  <title>{{tpl:LitraakProjectName encode_html="1"}} - {{tpl:lang Ticket #}}{{tpl:LitraakTicketId}} ({{tpl:LitraakTicketType}})</title>
+  <meta name="description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  
+  <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="dc.title" content="{{tpl:LitraakProjectName encode_html="1"}}" />
+  <meta name="dc.description" lang="{{tpl:LitraakProjectLang}}" content="{{tpl:LitraakProjectDescription full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="dc.creator" content="{{tpl:LitraakProjectAuthorCommonName encode_html="1"}}" />
+  <meta name="dc.language" content="{{tpl:LitraakProjectLang}}" />
+  <meta name="dc.publisher" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="dc.rights" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="dc.date" scheme="W3CDTF" content="{{tpl:LitraakProjectDate iso8601="1"}}" />
+  <meta name="dc.type" content="text" />
+  <meta name="dc.format" content="text/html" />
+  
+  <link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+  
+  	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang All projects}})" href="{{tpl:LitraakFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's releases}})" href="{{tpl:LitraakReleasesFeedURL type=" atom"}}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 1.0 ({{tpl:lang This project's tickets}})" href="{{tpl:LitraakTicketsFeedURL type=" atom"}}" />
+
+  {{tpl:include src="_head.html"}}
+  
+  <script type="text/javascript" src="{{tpl:BlogThemeURL}}/../default/js/post.js"></script>
+  <script type="text/javascript">
+  //<![CDATA[
+  var post_remember_str = '{{tpl:lang Remember me on this blog}}';
+  //]]>
+  </script>
+  
+</head>
+
+<body class="litraak-ticket">
+<div id="page">
+
+{{tpl:include src="_top.html"}}
+
+<div id="wrapper">
+
+<div id="main">
+  <div id="content">
+  
+  
+  <tpl:LitraakTicketIfExists>
+  <div id="p{{tpl:LitraakProjectID}}" class="post">
+    
+    <tpl:LitraakTicketIfDeleted>
+  	<p>{{tpl:lang This ticket has been deleted.}}</p>
+  	</tpl:LitraakTicketIfDeleted>
+  	
+   	<tpl:LitraakTicketIfDeleted not="1">
+    <p class="project-title"><a href="{{tpl:LitraakProjectURL}}">{{tpl:LitraakProjectName encode_html="1"}}</a></p>
+    <h2 class="post-title">{{tpl:lang Ticket #}}{{tpl:LitraakTicketId}} ({{tpl:LitraakTicketType}})</h2>
+    
+    <p><a href="{{tpl:LitraakTicketUrl}}">{{tpl:lang Permalink}}</a></p>
+    
+    <div id="ticket-content">
+    
+    	<h3>{{tpl:LitraakTicketTitle}}</h3>
+    	
+    	<p class="ticket-field"><label>{{tpl:lang Type:}}</label> {{tpl:LitraakTicketType}}</p>
+	    <p class="ticket-field"><label>{{tpl:lang Status:}}</label> {{tpl:LitraakTicketStatus}}</p>
+	    <p class="ticket-field"><label>{{tpl:lang Submitted by:}}</label> {{tpl:LitraakTicketAuthor}}</p>
+	    <p class="ticket-field"><label>{{tpl:lang Last updated on:}}</label> {{tpl:LitraakTicketDate}}</p>
+	    <tpl:LitraakTicketIf has_milestone="1">
+	    <p class="ticket-field"><label>{{tpl:lang Milestone:}}</label> <a href="{{tpl:LitraakTicketMilestoneURL}}">{{tpl:LitraakTicketMilestoneName}}</a></p>
+	    </tpl:LitraakTicketIf>
+    	
+    	<div id="ticket-description">{{tpl:LitraakTicketDescription}}</div>
+    
+    </div>    
+    
+    <tpl:LitraakTicketChanges>
+	<tpl:LitraakTicketChangesHeader>
+	<div id="ticket-changes">
+		<h3>{{tpl:lang Ticket history}}</h3>
+	</tpl:LitraakTicketChangesHeader>
+		
+		<dl class="{{tpl:LitraakTicketChangeIfFirst}} {{tpl:LitraakTicketChangeIfOdd}}">
+			<dt>{{tpl:LitraakTicketChangeTitle}}</dt>
+			<dd>
+				<tpl:LitraakTicketChangeIf has_comment="1">
+				{{tpl:LitraakTicketChangeDescription}}
+				</tpl:LitraakTicketChangeIf>
+				<p class="change-info">{{tpl:lang by}} {{tpl:LitraakTicketChangeAuthor}}, {{tpl:lang on}} {{tpl:LitraakTicketChangeDate}}, {{tpl:LitraakTicketChangeDate format="%H:%M"}}</p>
+			</dd>
+		</dl>
+		
+	<tpl:LitraakTicketChangesFooter>
+	</div>
+	</tpl:LitraakTicketChangesFooter>
+	</tpl:LitraakTicketChanges>
+	
+	
+	<tpl:LitraakTicketIf comments_active="1">
+	
+	<!-- # Ticket comment form -->
+	<form action="{{tpl:LitraakTicketURL}}/#pr" method="post" id="comment-form">
+		
+		<tpl:SysIfFormError>
+			<p class="error" id="pr">{{tpl:SysFormError}}</p>
+		</tpl:SysIfFormError>
+	
+		<tpl:IfTicketChangePreview>
+		<div id="pr">
+			<h3>{{tpl:lang Your comment}}</h3>
+			<dl>
+				<dd class="ticket-preview">{{tpl:TicketChangePreviewDescription}}</dd>
+			</dl>
+			<p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}" /></p>
+		</div>
+		</tpl:IfTicketChangePreview>
+	
+		<h3>{{tpl:lang Add a comment}}</h3>
+		<fieldset>
+		  
+			<p class="field"><label for="t_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
+			<input name="c_name" id="t_name" type="text" size="30" maxlength="255"
+			value="{{tpl:TicketChangePreviewName encode_html="1"}}" />
+			</p>
+		  
+			<p class="field"><label for="t_mail">{{tpl:lang Email address}}&nbsp;:</label>
+			<input name="c_mail" id="t_mail" type="text" size="30" maxlength="255"
+			value="{{tpl:TicketChangePreviewEmail encode_html="1"}}" />
+			</p>
+		  
+			<p style="display:none"><input name="f_mail" type="text" size="30"
+			maxlength="255" value="" /></p>
+			  
+			<p class="field"><label for="t_desc">{{tpl:lang Comment}}&nbsp;:</label>
+			<textarea name="c_desc" id="t_desc" cols="35"
+			rows="7">{{tpl:TicketChangePreviewDescription raw="1" encode_html="1"}}</textarea>
+			</p>
+			<p class="form-help">{{tpl:lang HTML code is displayed as text and web addresses are
+			automatically converted.}}</p>
+			  
+		</fieldset>
+	
+		<fieldset>
+			<p class="buttons"><input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}" />
+			<tpl:IfTicketChangePreview><input type="submit" class="submit" value="{{tpl:lang send}}" /></tpl:IfTicketChangePreview></p>
+		</fieldset>
+	</form>
+	</tpl:LitraakTicketIf>
+	
+    </tpl:LitraakTicketIfDeleted>
+    
+  </div>
+  </tpl:LitraakTicketIfExists>
+  
+	
+    
+	<tpl:LitraakTicketIf exists="0">
+	
+	<h2 class="post-title"><a href="{{tpl:LitraakProjectURL}}">{{tpl:LitraakProjectName encode_html="1"}}</a></h2>
+    
+    <!-- # Ticket form -->
+	<form action="{{tpl:LitraakProjectURL}}ticket/#pr" method="post" id="comment-form">
+		
+		<tpl:SysIfFormError>
+			<p class="error" id="pr">{{tpl:SysFormError}}</p>
+		</tpl:SysIfFormError>
+	
+		<tpl:IfTicketPreview>
+		<div id="pr">
+			<h3>{{tpl:lang Your ticket}}</h3>
+			<dl>
+				<dd class="ticket-preview">{{tpl:TicketPreviewDescription}}</dd>
+			</dl>
+			<p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}" /></p>
+		</div>
+		</tpl:IfTicketPreview>
+	
+		<h3>{{tpl:lang New ticket}}</h3>
+		<fieldset>
+		  
+			<p class="field"><label for="t_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
+			<input name="t_name" id="t_name" type="text" size="30" maxlength="255"
+			value="{{tpl:TicketPreviewName encode_html="1"}}" />
+			</p>
+		  
+			<p class="field"><label for="t_mail">{{tpl:lang Email address}}&nbsp;:</label>
+			<input name="t_mail" id="t_mail" type="text" size="30" maxlength="255"
+			value="{{tpl:TicketPreviewEmail encode_html="1"}}" />
+			</p>
+		  
+			<p class="field"><label for="t_title">{{tpl:lang Title}}&nbsp;:</label>
+			<input name="t_title" id="t_title" type="text" size="30" maxlength="255"
+			value="{{tpl:TicketPreviewTitle encode_html="1"}}" />
+			</p>
+		  
+			<p style="display:none"><input name="f_mail" type="text" size="30"
+			maxlength="255" value="" /></p>
+			  
+			<p class="field"><label for="t_desc">{{tpl:lang Description}}&nbsp;:</label>
+			<textarea name="t_desc" id="t_desc" cols="35"
+			rows="7">{{tpl:TicketPreviewDescription raw="1" encode_html="1"}}</textarea>
+			</p>
+			<p class="form-help">{{tpl:lang HTML code is displayed as text and web addresses are
+			automatically converted.}}</p>
+			  
+		</fieldset>
+	
+		<fieldset>
+			<p class="buttons"><input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}" />
+			<tpl:IfTicketPreview><input type="submit" class="submit" value="{{tpl:lang send}}" /></tpl:IfTicketPreview></p>
+		</fieldset>
+	</form>
+	</tpl:LitraakTicketIf>
+   
+    {{tpl:include src="_litraak-nav.html"}}
+   
+  </div>
+</div> <!-- End #main -->
+
+<div id="sidebar">
+  <div id="blognav">
+    {{tpl:Widgets type="nav"}}
+  </div> <!-- End #blognav -->
+  
+  <div id="blogextra">
+    {{tpl:Widgets type="extra"}}
+  </div> <!-- End #blogextra -->
+</div>
+
+</div> <!-- End #wrapper -->
+
+{{tpl:include src="_footer.html"}}
+</div> <!-- End #page -->
+</body>
+</html>

@@ -1,0 +1,147 @@
+﻿<html>
+<head>
+<title>Tickets</title>
+</head>
+<body>
+
+<h3>Liste des tickets</h3>
+
+<dl>
+	<dt>Titre du ticket</dt>
+	<dd>Le numéro du ticket et son titre. Le lien donne accès au
+	détail du ticket.</dd>
+
+	<dt>Date</dt>
+	<dd>La date de la dernière modification du ticket.</dd>
+
+	<dt>Projet</dt>
+	<dd>Le nom du projet auquel est associé le ticket. Le lien donne
+	accès au détail du projet.</dd>
+
+	<dt>Version</dt>
+	<dd>Le nom de la version à laquelle est associé le ticket (la
+	version dans laquelle le ticket sra/a été traité). Le lien donne accès
+	au détail de la version.</dd>
+
+	<dt>Auteur</dt>
+	<dd>Le nom de la personne qui a créé le ticket.</dd>
+
+	<dt>Type</dt>
+	<dd>Le type du ticket&nbsp;:
+	<ul>
+		<li><strong>bug</strong>&nbsp;: le ticket se rapporte à un
+		problème rencontré lors de l'utilisation du projet.</li>
+		<li><strong>tâche</strong>&nbsp;: le ticket indique une tâhce à
+		effectuer.</li>
+		<li><strong>idée</strong>&nbsp;: le ticket propose une idée ou
+		une amélioration pour le projet.</li>
+	</ul>
+	</dd>
+
+	<dt>État</dt>
+	<dd>L'état du ticket&nbsp;:
+	<ul>
+		<li><strong>nouveau</strong>&nbsp;: statut par défaut d'un ticket créé.</li>
+		<li><strong>accepté</strong>&nbsp;: le ticket a été analysé et accepté.</li>
+		<li><strong>fermé</strong>&nbsp;: le ticket à été fermé : indique un ticket résolu, par exemple.</li>
+		<li><strong>supprimé</strong>&nbsp;: le ticket a été supprimé, il n'est plus visible dans la partie publique.</li>
+		<li><strong>rejeté</strong>&nbsp;: le ticket a été rejeté : il est toujours visible dans la partie publique mais est inactif. Indique un ticket en doublon, ou inapproprié, par exemple.</li>
+	</ul>
+	</dd>
+</dl>
+
+<h3>Filtres de la liste des tickets</h3>
+
+<dl>
+	<dt>Projet</dt>
+	<dd>Filtre les tickets en fonction du projet auquel ils sont
+	associés.</dd>
+
+	<dt>Version</dt>
+	<dd>Filtre les tickets en fonction de la version à laquelle ils
+	sont associés.</dd>
+
+	<dt>Type</dt>
+	<dd>Filtre en fonction du type du ticket&nbsp;:
+	<ul>
+		<li><strong>bug</strong>&nbsp;: le ticket se rapporte à un
+		problème rencontré lors de l'utilisation du projet.</li>
+		<li><strong>tâche</strong>&nbsp;: le ticket indique une tâhce à
+		effectuer.</li>
+		<li><strong>idée</strong>&nbsp;: le ticket propose une idée ou
+		une amélioration pour le projet.</li>
+	</ul>
+	</dd>
+
+	<dt>État</dt>
+	<dd>Filtre en fonction de l'état du ticket&nbsp;:
+	<ul>
+		<li><strong>nouveau</strong>&nbsp;: statut par défaut d'un ticket créé.</li>
+		<li><strong>accepté</strong>&nbsp;: le ticket a été analysé et accepté.</li>
+		<li><strong>fermé</strong>&nbsp;: le ticket à été fermé : indique un ticket résolu, par exemple.</li>
+		<li><strong>supprimé</strong>&nbsp;: le ticket a été supprimé, il n'est plus visible dans la partie publique.</li>
+		<li><strong>rejeté</strong>&nbsp;: le ticket a été rejeté : il est toujours visible dans la partie publique mais est inactif. Indique un ticket en doublon, ou inapproprié, par exemple.</li>
+		<li><strong>actifs</strong>&nbsp;: regroupe les états <em>nouveau</em> et <em>accepté</em>.</li>
+		<li><strong>déchet</strong>&nbsp;: regroupe les états <em>supprimé</em> et <em>rejeté</em>.</li>
+	</ul>
+	</dd>
+</dl>
+
+<h3>Editer un ticket</h3>
+
+<dl>
+	<dt>Type</dt>
+	<dd>Le type du ticket&nbsp;:
+	<ul>
+		<li><strong>bug</strong>&nbsp;: le ticket se rapporte à un
+		problème rencontré lors de l'utilisation du projet.</li>
+		<li><strong>tâche</strong>&nbsp;: le ticket indique une tâhce à
+		effectuer.</li>
+		<li><strong>idée</strong>&nbsp;: le ticket propose une idée ou
+		une amélioration pour le projet.</li>
+	</ul>
+	</dd>
+
+	<dt>Etat</dt>
+	<dd>L'état du ticket&nbsp;:
+	<ul>
+		<li><strong>nouveau</strong>&nbsp;: statut par défaut d'un ticket créé.</li>
+		<li><strong>accepté</strong>&nbsp;: le ticket a été analysé et accepté.</li>
+		<li><strong>fermé</strong>&nbsp;: le ticket à été fermé : indique un ticket résolu, par exemple.</li>
+		<li><strong>supprimé</strong>&nbsp;: le ticket a été supprimé, il n'est plus visible dans la partie publique.</li>
+		<li><strong>rejeté</strong>&nbsp;: le ticket a été rejeté : il est toujours visible dans la partie publique mais est inactif. Indique un ticket en doublon, ou inapproprié, par exemple.</li>
+	</ul>
+	</dd>
+
+	<dt>Titre</dt>
+	<dd>Inscrivez le nom du projet. Ce champ est obligatoire.</dd>
+
+	<dt>Nom</dt>
+	<dd>Le nom de l'auteur du ticket.</dd>
+
+	<dt>Email</dt>
+	<dd>L'email de l'auteur du ticket.</dd>
+
+	<dt>Version</dt>
+	<dd>Indiquez la version dans laquelle le ticket sera ou a été
+	traité.</dd>
+
+	<dt>Description</dt>
+	<dd>La description du ticket. Ce champ est obligatoire.</dd>
+
+	<dt>Ajouter un commentaire</dt>
+	<dd>Saisissez un commentaire que vous voulez ajouter sur ce
+	ticket. Ce commentaire apparaîtra dans l'historique du ticket.</dd>
+
+	<dt>Afficher le commentaire sur la page publique</dt>
+	<dd>Indique si vous voulez que le commentaire saisi apparaisse sur
+	la page publique du ticket. La case est cochée par défaut.</dd>
+
+	<dt>Historique du ticket</dt>
+	<dd>Liste tous les changements et les commentaires associés au
+	ticket. Un pictogramme indique si le commentaire associé au changement
+	est visible sur la page publique du ticket.</dd>
+</dl>
+
+</body>
+</html>
