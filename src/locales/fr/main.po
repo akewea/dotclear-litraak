@@ -299,7 +299,7 @@ msgid "Add LitraAk to dashboard"
 msgstr "Ajouter LiTraAk sur le tableau de bord"
 
 msgid "Add LitraAk to blog menu (instead of plugins menu)"
-msgstr "Ajouter LiTraAk au menu du blog (à la placve du menu des plugins)"
+msgstr "Ajouter LiTraAk au menu du blog (à la place du menu des plugins)"
 
 msgid "No project name"
 msgstr "Pas de nom de projet"

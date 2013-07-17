@@ -41,8 +41,9 @@ $core->addBehavior('adminBeforeBlogSettingsUpdate',array('litraakAdmin','adminBe
 # Préférences utilisateur
 $core->addBehavior('adminUserForm',array('litraakAdmin','adminUserForm'));
 $core->addBehavior('adminPreferencesForm',array('litraakAdmin','adminPreferencesForm'));
-$core->addBehavior('adminBeforeUserUpdate',array('litraakAdmin','adminBeforeUserCreateOrUpdate'));
 $core->addBehavior('adminBeforeUserCreate',array('litraakAdmin','adminBeforeUserCreateOrUpdate'));
+$core->addBehavior('adminBeforeUserUpdate',array('litraakAdmin','adminBeforeUserCreateOrUpdate'));
+$core->addBehavior('adminBeforeUserOptionsUpdate',array('litraakAdmin','adminBeforeUserCreateOrUpdate'));
 
 class litraakExport
 {
@@ -110,16 +111,15 @@ class litraakAdmin
 	
 	public static function adminUserForm($rs)
 	{
-		$user_options = array();
-		if($rs){
-			$user_options = array_merge($user_options,$rs->options());
-		}else{
-			$user_options = array_merge($user_options,array(
+		$user_options = array(
 					'litraak_desc_edit_size' => 30,
 					'litraak_doc_edit_size' => 40,
 					'litraak_dashboard_icon' => 0,
 					'litraak_blog_menu_icon' => 0
-			));
+			);
+		
+		if($rs){
+			$user_options = array_merge($user_options,$rs->options());
 		}
 		
 		return self::litraakUserForm(
@@ -172,7 +172,7 @@ class litraakAdmin
 	
 	public static function adminBeforeUserCreateOrUpdate($cur, $id=0)
 	{
-		//print_r($_POST);
+		//print_r($_POST); exit;
 		
 		$cur->user_options['litraak_desc_edit_size'] = (integer) $_POST['litraak_desc_edit_size'];
 		$cur->user_options['litraak_doc_edit_size'] = (integer) $_POST['litraak_doc_edit_size'];
