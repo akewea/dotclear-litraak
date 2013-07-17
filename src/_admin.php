@@ -10,13 +10,11 @@ $litraak = new litraak($core);
 // Ajout de l'icone au tableau de bord
 if($core->blog->settings->litraak->litraak_enabled){
 	
-	if((boolean) $core->auth->getOption('litraak_dashboard_icon')){
-		$core->addBehavior('adminDashboardIcons',array('litraakAdmin','litraakDashboard'));
-	}
+	// Ajout dans les favoris
+	$core->addBehavior('adminDashboardFavs',	array('litraakAdmin', 'litraakDashboard'));
 	
 	// Ajout dans les menus
-	$target_menu = ((boolean) $core->auth->getOption('litraak_blog_menu_icon')) ? 'Blog':'Plugins';
-	$_menu[$target_menu]->addItem(__('Litraak'),'plugin.php?p=litraak','index.php?pf=litraak/img/icon-small.png',
+	$_menu['Plugins']->addItem(__('Litraak'),'plugin.php?p=litraak','index.php?pf=litraak/img/icon-small.png',
 	                preg_match('/plugin.php\?p=litraak(&.*)?$/',$_SERVER['REQUEST_URI']),
 	                $core->auth->check('usage,contentadmin',$core->blog->id));
 	
@@ -72,15 +70,36 @@ class litraakAdmin
 {
 	# Tableau de bord ##########################################################
 	
-	public static function litraakDashboard($core,$icons)
+	public static function litraakDashboard($core,$favs)
 	{
 		global $litraak;
 		
 		$params = array('ticket_status' => litraak::getActiveTicketStatus());
-		$rs = $litraak->getTickets($params, true);
-		
+		$rs = $litraak->getTickets($params, true);		
 		$icon_name = __('Litraak').(($rs->f(0) > 0) ? ' ('.sprintf(__('%s open tickets'), $rs->f(0)).')' : '');
-		$icons['litraak'] = new ArrayObject(array($icon_name,'plugin.php?p=litraak','index.php?pf=litraak/img/icon.png'));
+		
+		$favs['litraak'] = new ArrayObject(array(
+				'litraak',
+				$icon_name,
+				'plugin.php?p=litraak',
+				'index.php?pf=litraak/img/icon-small.png',
+				'index.php?pf=litraak/img/icon.png',
+				'usage,contentadmin',
+				null,
+				null));
+	}
+	
+	public static function dashboardFavs($core,$favs)
+	{
+		$favs['fostrak'] = new ArrayObject(array(
+				'fostrak',
+				__('Fostrak'),
+				'plugin.php?p=fostrak',
+				'index.php?pf=fostrak/img/icon-16.png',
+				'index.php?pf=fostrak/img/icon-64.png',
+				'usage,contentadmin',
+				null,
+				null));
 	}
 	
 	# Préférences du blog ######################################################
@@ -113,9 +132,7 @@ class litraakAdmin
 	{
 		$user_options = array(
 					'litraak_desc_edit_size' => 30,
-					'litraak_doc_edit_size' => 40,
-					'litraak_dashboard_icon' => 0,
-					'litraak_blog_menu_icon' => 0
+					'litraak_doc_edit_size' => 40
 			);
 		
 		if($rs){
@@ -124,18 +141,14 @@ class litraakAdmin
 		
 		return self::litraakUserForm(
 			$user_options['litraak_desc_edit_size'], 
-			$user_options['litraak_doc_edit_size'], 
-			$user_options['litraak_dashboard_icon'], 
-			$user_options['litraak_blog_menu_icon']);
+			$user_options['litraak_doc_edit_size']);
 	}
 	
 	public static function adminPreferencesForm($core)
 	{
 		return self::litraakUserForm(
 			$core->auth->getOption('litraak_desc_edit_size'), 
-			$core->auth->getOption('litraak_doc_edit_size'), 
-			$core->auth->getOption('litraak_dashboard_icon'), 
-			$core->auth->getOption('litraak_blog_menu_icon'));
+			$core->auth->getOption('litraak_doc_edit_size'));
 	}
 	
 	private static function litraakUserForm($desc_edit_size, $doc_edit_size, $litraak_dashboard_icon, $litraak_blog_menu_icon="toto")
@@ -149,21 +162,14 @@ class litraakAdmin
 		form::field('litraak_desc_edit_size',5,4,$desc_edit_size,'',11).
 		'</label></p>'.
 		
+		'</div>'.
+		'<div class="col">'.
+				
+		
 		'<p><label>'.__('Project documentation edit field height:').' '.
 		form::field('litraak_doc_edit_size',5,4,$doc_edit_size,'',11).
 		'</label></p>'.
 		
-		'</div>'.
-		'<div class="col">'.
-		
-		'<p><label class="classic">'.
-		form::checkbox('litraak_dashboard_icon','1',$litraak_dashboard_icon).
-		__('Add LitraAk to dashboard').'</label></p>'.
-		
-		'<p><label class="classic">'.
-		form::checkbox('litraak_blog_menu_icon','1',$litraak_blog_menu_icon).
-		__('Add LitraAk to blog menu (instead of plugins menu)').'</label></p>'.
-				
 		'</div>'.
 		
 		'</div>'.
@@ -184,9 +190,6 @@ class litraakAdmin
 		if ((integer) $cur->user_options['litraak_doc_edit_size'] < 1) {
 			$cur->user_options['litraak_doc_edit_size'] = litraakUtils::PROJECT_DEFAULT_EDIT_SIZE;
 		}
-		
-		$cur->user_options['litraak_dashboard_icon'] = !empty($_POST['litraak_dashboard_icon']);
-		$cur->user_options['litraak_blog_menu_icon'] = !empty($_POST['litraak_blog_menu_icon']);
 	}
 }
 
