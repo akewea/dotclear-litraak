@@ -180,8 +180,16 @@ echo
 	$milestone_links.
 	
 	'<p><label class="classic">'.form::checkbox('ticket_open_comment',1,$ticket_open_comment,'',3).' '.
-	__('Accept comments').'</label></p>'.
+	__('Accept comments').'</label></p>';
 	
+if(!$ticket->isEmpty()){
+	echo
+		'<p><strong>'.__('Date:').'</strong> '.
+		dt::dt2str(__('%Y-%m-%d %H:%M'),$ticket->ticket_upddt).
+		'</p>';
+}
+
+echo
 	'<p><strong>'.__('Name:').'</strong> '.
 	(($ticket_author)?$ticket_author:html::escapeHTML($core->auth->getInfo('user_cn'))).
 	'</p>'.
