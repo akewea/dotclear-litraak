@@ -185,7 +185,7 @@ echo
 if(!$ticket->isEmpty()){
 	echo
 		'<p><strong>'.__('Date:').'</strong> '.
-		dt::dt2str(__('%Y-%m-%d %H:%M'),$ticket->ticket_upddt).
+		dt::dt2str(__('%Y-%m-%d %H:%M'),$ticket->ticket_dt).
 		'</p>';
 }
 
