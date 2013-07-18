@@ -308,7 +308,7 @@ msgid "No project description"
 msgstr "Pas de description du projet"
 
 msgid "No milestone tickets"
-msgstr "Tickets non affectés"
+msgstr "Tickets à planifier"
 
 msgid "Tickets per page"
 msgstr "Tickets par page"
