@@ -166,7 +166,7 @@ if (!empty($_POST) && !empty($_POST['save']) && $can_edit_post)
 	if (!empty($_POST['post_url'])) {
 		$cur->post_url = $post_url;
 	}elseif(isset($_POST['post_url']) || !$post_id){
-		$cur->post_url = text::tidyURL($post_title);
+		$cur->post_url = text::tidyURL($post_title, false);
 	}
 	
 	# Update post

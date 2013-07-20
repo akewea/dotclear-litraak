@@ -16,6 +16,8 @@ $GLOBALS['__autoload']['litraakMedia'] = dirname(__FILE__).'/inc/class.litraak.m
 $GLOBALS['__autoload']['litraakRestMethods'] = dirname(__FILE__).'/inc/lib.litraak.services.php';
 $GLOBALS['__autoload']['litraakFeeds'] = dirname(__FILE__).'/inc/lib.litraak.feeds.php';
 
+$core->blog->settings->addNamespace('litraak');
+
 # Nouveau type de post
 $core->setPostType('litraak', 'plugin.php?p=litraak&projectid=%s', $core->blog->settings->litraak->litraak_basename_url.'/%s/');
 
