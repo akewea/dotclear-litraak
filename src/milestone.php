@@ -194,7 +194,7 @@ echo
 	'<div id="entry-content"><fieldset class="constrained">'.
 	
 	'<p><label class="required" title="'.__('Required field').'">'.__('Name:').
-	form::field('milestone_name',30,255,$milestone_name).
+	form::field('milestone_name',30,255,html::escapeHTML($milestone_name)).
 	'</label></p>'.
 	
 	'<p class="area"><label for="milestone_desc" class="required" title="'.
