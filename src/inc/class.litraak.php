@@ -1196,7 +1196,7 @@ class litraak
 		$post_id = $rs->post_id;
 		
 		// Nb tickets projet
-		$strReq = 'SELECT COUNT(post_id) '.
+		$strReq = 'SELECT COUNT(ticket_id) '.
 				'FROM '.$this->prefix.'litraak_ticket '.
 				'WHERE post_id = '.(integer) $post_id.' ';
 		if ($del) {
@@ -1209,7 +1209,7 @@ class litraak
 		$nb_tickets_project = (integer) $rs->f(0);
 		
 		// Nb tickets actives du projet
-		$strReq = 'SELECT COUNT(milestone_id) '.
+		$strReq = 'SELECT COUNT(ticket_id) '.
 				'FROM '.$this->prefix.'litraak_ticket '.
 				'WHERE post_id = '.(integer) $post_id.' '.
 				'AND ticket_status < '.self::TICKET_CLOSED.' ';
@@ -1223,7 +1223,7 @@ class litraak
 		$nb_actives_project = (integer) $rs->f(0);
 		
 		// Nb tickets rejected or deleted (wasted) du projet
-		$strReq = 'SELECT COUNT(milestone_id) '.
+		$strReq = 'SELECT COUNT(ticket_id) '.
 				'FROM '.$this->prefix.'litraak_ticket '.
 				'WHERE post_id = '.(integer) $post_id.' '.
 				'AND ticket_status > '.self::TICKET_CLOSED.' ';
@@ -1237,7 +1237,7 @@ class litraak
 		$nb_wasted_project = (integer) $rs->f(0);
 		
 		// Nb tickets
-		$strReq = 'SELECT COUNT(milestone_id) '.
+		$strReq = 'SELECT COUNT(ticket_id) '.
 				'FROM '.$this->prefix.'litraak_ticket '.
 				'WHERE milestone_id = '.(integer) $milestone_id.' ';
 		if ($del) {
@@ -1250,7 +1250,7 @@ class litraak
 		$nb_tickets = (integer) $rs->f(0);
 		
 		// Nb tickets actives
-		$strReq = 'SELECT COUNT(milestone_id) '.
+		$strReq = 'SELECT COUNT(ticket_id) '.
 				'FROM '.$this->prefix.'litraak_ticket '.
 				'WHERE milestone_id = '.(integer) $milestone_id.' '.
 				'AND ticket_status < '.self::TICKET_CLOSED.' ';
@@ -1264,7 +1264,7 @@ class litraak
 		$nb_actives = (integer) $rs->f(0);
 		
 		// Nb tickets rejected or deleted (wasted)
-		$strReq = 'SELECT COUNT(milestone_id) '.
+		$strReq = 'SELECT COUNT(ticket_id) '.
 				'FROM '.$this->prefix.'litraak_ticket '.
 				'WHERE milestone_id = '.(integer) $milestone_id.' '.
 				'AND ticket_status > '.self::TICKET_CLOSED.' ';
