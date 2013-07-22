@@ -189,8 +189,7 @@ if ($dir && !empty($_GET['remove']))
 /* DISPLAY Main page
 -------------------------------------------------------- */
 litraakPage::open(__('Media manager'),
-	dcPage::jsLoad('js/_media.js').
-	($core_media_writable ? dcPage::jsCandyUpload(array('d='.$d)) : ''));
+	dcPage::jsLoad('js/_media.js'));
 
 if (!empty($_GET['mkdok'])) {
 	echo '<p class="message">'.__('Directory has been successfully created.').'</p>';
