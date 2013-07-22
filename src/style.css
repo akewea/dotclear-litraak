@@ -1,5 +1,21 @@
 @CHARSET "ISO-8859-1";
 
+/* Navigation
+------------------------------------------------------------------------------*/
+#litraak-nav ul {
+	padding-left: 0;
+}
+#litraak-nav ul li {
+	display: inline;
+	text-indent: 0;
+	padding: 0 5px;
+	border-left: 1px solid #CCC;
+}
+#litraak-nav ul li.first {
+	padding-left: 0;
+	border-left-width: 0;
+}
+
 /* Progress infos
 ------------------------------------------------------------------------------*/
 .progress-info {
