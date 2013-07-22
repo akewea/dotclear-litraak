@@ -203,7 +203,7 @@ echo
 	'<div id="entry-content"><fieldset class="constrained">'.
 	
 	'<p><label class="required" title="'.__('Required field').'">'.__('Title:').
-	form::field('ticket_title',50,255,$ticket_title).
+	form::field('ticket_title',50,255,html::escapeHTML($ticket_title)).
 	'</label></p>'.
 	
 	'<p class="area"><label for="ticket_desc" class="required" title="'.
