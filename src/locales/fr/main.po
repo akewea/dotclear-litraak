@@ -422,7 +422,7 @@ msgid "Basename URL"
 msgstr "Nom de base de l'URL"
 
 msgid "Include default CSS"
-msgstr "Inclure la CSS par défaut"
+msgstr "Inclure la feuille de style CSS par défaut"
 
 msgid "Projects per feed"
 msgstr "Projets par flux de syndication"
