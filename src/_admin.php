@@ -151,7 +151,7 @@ class litraakAdmin
 			$core->auth->getOption('litraak_doc_edit_size'));
 	}
 	
-	private static function litraakUserForm($desc_edit_size, $doc_edit_size, $litraak_dashboard_icon, $litraak_blog_menu_icon="toto")
+	private static function litraakUserForm($desc_edit_size, $doc_edit_size)
 	{		
 		echo
 		'<fieldset><legend>LitraAk</legend>'.
