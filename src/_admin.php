@@ -11,7 +11,8 @@ $litraak = new litraak($core);
 if($core->blog->settings->litraak->litraak_enabled){
 	
 	// Ajout dans les favoris
-	$core->addBehavior('adminDashboardFavs',	array('litraakAdmin', 'litraakDashboard'));
+	$core->addBehavior('adminDashboardFavs',		array('litraakAdmin', 'litraakDashboard'));
+	$core->addBehavior('adminDashboardFavsIcon',	array('litraakAdmin', 'litraakDashboardIcon'));
 	
 	// Ajout dans les menus
 	$_menu['Plugins']->addItem(__('Litraak'),'plugin.php?p=litraak','index.php?pf=litraak/img/icon-small.png',
@@ -72,11 +73,7 @@ class litraakAdmin
 	
 	public static function litraakDashboard($core,$favs)
 	{
-		global $litraak;
-		
-		$params = array('ticket_status' => litraak::getActiveTicketStatus());
-		$rs = $litraak->getTickets($params, true);		
-		$icon_name = __('Litraak').(($rs->f(0) > 0) ? ' ('.sprintf(__('%s open tickets'), $rs->f(0)).')' : '');
+		$icon_name = __('Litraak');
 		
 		$favs['litraak'] = new ArrayObject(array(
 				'litraak',
@@ -89,17 +86,18 @@ class litraakAdmin
 				null));
 	}
 	
-	public static function dashboardFavs($core,$favs)
+	public static function litraakDashboardIcon($core, $name, $fav)
 	{
-		$favs['fostrak'] = new ArrayObject(array(
-				'fostrak',
-				__('Fostrak'),
-				'plugin.php?p=fostrak',
-				'index.php?pf=fostrak/img/icon-16.png',
-				'index.php?pf=fostrak/img/icon-64.png',
-				'usage,contentadmin',
-				null,
-				null));
+		
+		if($name == 'litraak'){
+			global $litraak;
+			
+			$params = array('ticket_status' => litraak::getActiveTicketStatus());
+			$rs = $litraak->getTickets($params, true);		
+			$icon_name = __('Litraak').(($rs->f(0) > 0) ? ' ('.sprintf(__('%s open tickets'), $rs->f(0)).')' : '');
+			
+			$fav[0] = $icon_name;
+		}
 	}
 	
 	# Préférences du blog ######################################################
