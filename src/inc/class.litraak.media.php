@@ -11,7 +11,7 @@ class litraakMedia extends dcMedia
 		$this->table_ref = $this->core->prefix.'litraak_milestone_media';
 	}
 	
-	public function getPostMedia($post_id,$media_id=null)
+	public function getPostMedia($post_id,$media_id=null, $return_rs = false)
 	{
 		$post_id = (integer) $post_id;
 		
