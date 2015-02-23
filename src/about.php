@@ -3,7 +3,7 @@
 
 /* DISPLAY
  ------------------------------------------------------------------------------*/
-$starting_script = litraakPage::jsPageTabs($default_tab);
+$starting_script = '';
 
 litraakPage::open(__('Litraak'),
 $starting_script);

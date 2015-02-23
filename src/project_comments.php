@@ -30,8 +30,7 @@ litraakPage::open(__('Litraak'),
 	litraakPage::jsToolBar().
 	litraakPage::jsModal().
 	litraakPage::jsLoad('index.php?pf=litraak/js/_project.js').
-	litraakPage::jsConfirmClose('project-form','comment-form').
-	litraakPage::jsPageTabs($default_tab)
+	litraakPage::jsConfirmClose('project-form','comment-form')
 );
 
 litraakPage::breadCrumb(' &rsaquo; <a href="'.$litraak->getProjectAdminUrl($project_id).

@@ -62,10 +62,18 @@ try {
 
 /* DISPLAY
 ------------------------------------------------------------------------------*/
-$starting_script = litraakPage::jsPageTabs($default_tab);
+$starting_script = '';
 	
 if (!$show_filters) {
 	$starting_script .= litraakPage::jsLoad('js/filter-controls.js');
+	$starting_script .=
+	'<script type="text/javascript">'."\n".
+	"//<![CDATA["."\n".
+	dcPage::jsVar('dotclear.msg.show_filters', $show_filters ? 'true':'false')."\n".
+	dcPage::jsVar('dotclear.msg.filter_posts_list',__('Show filters and display options'))."\n".
+	dcPage::jsVar('dotclear.msg.cancel_the_filter',__('Cancel filters and display options'))."\n".
+	"//]]>".
+	"</script>";
 }
 
 litraakPage::open(__('Litraak'), 
@@ -83,11 +91,6 @@ echo $blocks[0];
 
 if (!$core->error->flag())
 {
-	if (!$show_filters) {
-		echo '<p><a id="filter-control" class="form-control" href="#">'.
-		__('Filters').'</a></p>';
-	}
-	
 	echo
 	'<form action="plugin.php" method="get" id="filters-form">'.
 	'<fieldset><legend>'.__('Filters').'</legend>'.

@@ -113,7 +113,6 @@ $types_combo = litraakUtils::getTicketTypesCombo($litraak);
 ------------------------------------------------------------------------------*/
 
 litraakPage::open(__('Litraak'),
-	litraakPage::jsPageTabs($default_tab).
 	litraakPage::jsConfirmClose('ticket-form').
 	litraakPage::jsToolBar().
 	litraakPage::jsLoad('index.php?pf=litraak/js/_ticket.js')

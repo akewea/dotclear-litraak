@@ -81,7 +81,6 @@ $status_combo = litraakUtils::getMilestoneStatusCombo($litraak);
 ------------------------------------------------------------------------------*/
 
 litraakPage::open(__('Litraak'),
-	litraakPage::jsPageTabs($default_tab).
 	litraakPage::jsDatePicker().
 	litraakPage::jsToolBar().
 	litraakPage::jsLoad('index.php?pf=litraak/js/_milestone.js').

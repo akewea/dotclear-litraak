@@ -52,7 +52,9 @@ class litraakExport
 		// TODO
 		$exp->exportTable('litraak_milestone');
 		$exp->exportTable('litraak_ticket');
-		$exp->exportTable('litraak_download');
+		$exp->exportTable('litraak_ticket_change');
+		$exp->exportTable('litraak_milestone_media');
+		$exp->exportTable('litraak_project_info');
 	}
 
 	# Single blog export behavior	

@@ -4,9 +4,11 @@
 class litraakPage extends dcPage
 {
 	
-	const SELECTED_TAB = '<div class="multi-part" id="%s" title="%s">%s</div>';
-	const LINK_TAB = '<a href="%s" class="multi-part">%s</a>';
-		
+	//const SELECTED_TAB = '<div class="multi-part" id="%s" title="%s">%s</div>';
+	//const LINK_TAB = '<a href="%s" id="%s" class="multi-part" title="%s">%s</a>';
+	const SELECTED_TAB = '<li class="part-tabs-active"><a href="#">%s</a></li>';
+	const LINK_TAB = '<li><a href="%s">%s</a></li>';
+	
 	public static function open($title='', $head='')
 	{
 		echo
@@ -74,16 +76,18 @@ class litraakPage extends dcPage
 	
 	private static function getTabs($tabs, $current)
 	{
-		$res = '';
+		$res = '<div class="part-tabs"><ul>';
 		foreach($tabs as $id => $tab){
 			if($current == $id)
 			{
-				$res .= sprintf(self::SELECTED_TAB, $id, $tab['name'], '%s');
+				$res .= sprintf(self::SELECTED_TAB, $tab['name']);
 			}else{
 				$res .= sprintf(self::LINK_TAB, $tab['url'], $tab['name']);
 			}
 		}
 		
+		$res .= '</ul></div><div>%s</div>';
+		 
 		return $res;
 	}
 	

@@ -92,8 +92,7 @@ litraakPage::open(__('Litraak'),
 	litraakPage::jsToolBar().
 	litraakPage::jsModal().
 	litraakPage::jsLoad('index.php?pf=litraak/js/_project.js').
-	litraakPage::jsConfirmClose('project-form').
-	litraakPage::jsPageTabs($default_tab)
+	litraakPage::jsConfirmClose('project-form')
 );
 
 if (!empty($_GET['upd'])) {
